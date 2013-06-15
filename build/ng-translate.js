@@ -1,6 +1,6 @@
 /**
  * Translation module for angularjs.
- * @version v0.0.2 - 2013-04-04
+ * @version v0.0.2 - 2013-06-15
  * @author Stephan Hoyer
  * @link https://github.com/StephanHoyer/ng-translate
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -46,7 +46,7 @@
   }]);
 
   /* Directives */
-  ng.module('translate.directives', [], function ($compileProvider) {
+  ng.module('translate.directives', [], ['$compileProvider', function ($compileProvider) {
     $compileProvider.directive('translate', ['$compile', 'translate', function ($compile, translate) {
       return {
         priority: 10, //Should be evaluated befor e. G. pluralize
@@ -71,5 +71,5 @@
         }
       };
     }]);
-  });
+  }]);
 }(angular));

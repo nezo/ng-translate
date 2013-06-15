@@ -38,7 +38,7 @@
   }]);
 
   /* Directives */
-  ng.module('translate.directives', [], function ($compileProvider) {
+  ng.module('translate.directives', [], ['$compileProvider', function ($compileProvider) {
     $compileProvider.directive('translate', ['$compile', 'translate', function ($compile, translate) {
       return {
         priority: 10, //Should be evaluated befor e. G. pluralize
@@ -63,5 +63,5 @@
         }
       };
     }]);
-  });
+  }]);
 }(angular));
